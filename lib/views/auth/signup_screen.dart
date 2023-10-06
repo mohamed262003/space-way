@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:nasa_space_apps/views/auth/login_screen.dart';
@@ -58,8 +59,6 @@ class _SignupScreenState extends State<SignupScreen> {
           'name': name,
           'email': email,
           'password': password,
-          'phone': '',
-          'address': '',
         });
         _formKey.currentState!.reset();
         await Future.delayed(
@@ -191,7 +190,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 140.h),
+                      SizedBox(height: 100.h),
                       Text(
                         "Sign Up",
                         style: TextStyle(
@@ -424,8 +423,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             processing == true ? null : signUp();
                           },
                           child: processing == true
-                              ? const CircularProgressIndicator(
-                                  color: Colors.white,
+                              ? SpinKitFadingCube(
+                                  color: Colors.black,
+                                  size: 18.sp,
                                 )
                               : Text(
                                   'Sign Up',

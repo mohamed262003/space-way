@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:nasa_space_apps/views/auth/signup_screen.dart';
@@ -11,6 +12,7 @@ import 'package:nasa_space_apps/views/homepage.dart';
 import 'package:provider/provider.dart';
 import 'package:rive/rive.dart';
 import '../../providers/id_provider.dart';
+import 'forgot_password.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -160,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height: 140.h),
+                      SizedBox(height: 100.h),
                       Text(
                         "Log In",
                         style: TextStyle(
@@ -171,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 30.h),
+                      SizedBox(height: 20.h),
                       sendEmailVerification == true
                           ? Center(
                               child: Container(
@@ -336,7 +338,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           onChanged: (value) {
                             password = value;
                           },
-                          //   controller: _passwordController,
                           obscureText: passwordVisible,
                           decoration: InputDecoration(
                             suffixIcon: IconButton(
@@ -391,10 +392,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           children: [
                             TextButton(
                               onPressed: () {
-                                /*Get.to(
+                                Get.to(
                                   const ForgotPassword(),
                                   transition: Transition.leftToRight,
-                                );*/
+                                );
                               },
                               child: Text(
                                 'Forget Password ?',
@@ -439,8 +440,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             processing == true ? null : logIn();
                           },
                           child: processing == true
-                              ? const CircularProgressIndicator(
+                              ? SpinKitFadingCube(
                                   color: Colors.black,
+                                  size: 18.sp,
                                 )
                               : Text(
                                   'Sign In',

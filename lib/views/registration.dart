@@ -18,11 +18,15 @@ class Registration extends StatefulWidget {
   final String planetName;
   final double planetPrice;
   final int planetDuration;
+  final int planetProgram;
+  final int planetNumber;
   const Registration({
     super.key,
     required this.planetName,
     required this.planetPrice,
     required this.planetDuration,
+    required this.planetProgram,
+    required this.planetNumber,
   });
 
   @override
@@ -470,7 +474,10 @@ class _RegistrationState extends State<Registration> {
                                         variableProvider.selectedActivity,
                                     transportation:
                                         variableProvider.selectedTransportation,
+                                    planetProgram: widget.planetProgram,
+                                    planetNumber: widget.planetNumber,
                                   ),
+                                  transition: Transition.rightToLeftWithFade,
                                 );
                               }
                             }
@@ -501,7 +508,7 @@ class _RegistrationState extends State<Registration> {
                         enabled: true,
                         shadowDegree: ShadowDegree.dark,
                         child: Text(
-                          "Check out",
+                          "Continue",
                           style: TextStyle(
                             fontFamily: "Dosis",
                             letterSpacing: 3,

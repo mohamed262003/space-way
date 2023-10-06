@@ -8,6 +8,7 @@ import 'package:nasa_space_apps/model/data.dart';
 import 'package:nasa_space_apps/views/auth/login_screen.dart';
 import 'package:nasa_space_apps/views/constants.dart';
 import 'package:nasa_space_apps/views/detailsview.dart';
+import 'package:nasa_space_apps/views/trips_screen/trips_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/id_provider.dart';
@@ -238,7 +239,28 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 30.h),
+            Center(
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  backgroundColor: Colors.white,
+                ),
+                onPressed: () {
+                  Get.to(
+                    const TripsScreen(),
+                    transition: Transition.fadeIn,
+                  );
+                },
+                child: const Text(
+                  "Go to Trip Screen",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

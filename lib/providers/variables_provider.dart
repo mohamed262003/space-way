@@ -4,10 +4,17 @@ class VariableProvider extends ChangeNotifier {
   int selectedHotel = 0;
   int selectedTransportation = 0;
   int selectedActivity = -1;
+  int selectedProgram = -1;
+  bool isClicked = false;
   bool pickedDate = false;
   bool pickedCurrency = false;
   String countryCurrency = "EGP";
   DateTime userDate = DateTime.now();
+
+  void updateSelectedTerms(bool newValue) {
+    isClicked = newValue;
+    notifyListeners();
+  }
 
   void updateSelectedHotel(int newValue) {
     selectedHotel = newValue;
@@ -16,6 +23,11 @@ class VariableProvider extends ChangeNotifier {
 
   void updateSelectedTransportation(int newValue) {
     selectedTransportation = newValue;
+    notifyListeners();
+  }
+
+  void updateSelectedProgram(int newValue) {
+    selectedProgram = newValue;
     notifyListeners();
   }
 

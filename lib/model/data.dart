@@ -6,14 +6,18 @@ class PlanetInfo {
   final String? iconImage;
   final String? description;
   final List<String>? images;
+  final List<String>? places;
   final String mass;
   final String distanceFromEarth;
   final double gravity;
   final double size;
+  final double temp;
 
   PlanetInfo(
     this.position, {
+    required this.temp,
     required this.mass,
+    required this.places,
     required this.distanceFromEarth,
     required this.gravity,
     required this.size,
@@ -28,6 +32,7 @@ class PlanetInfo {
 
 List<PlanetInfo> planets = [
   PlanetInfo(
+    temp: 167,
     1,
     gravity: 3.7,
     name: 'Mercury',
@@ -36,6 +41,10 @@ List<PlanetInfo> planets = [
     iconImage: 'assets/images/mercury.png',
     description:
         "Zipping around the sun in only 88 days, Mercury is the closest planet to the sun, and it's also the smallest, only a little bit larger than Earth's moon. Because its so close to the sun (about two-fifths the distance between Earth and the sun), Mercury experiences dramatic changes in its day and night temperatures: Day temperatures can reach a scorching 840  F (450 C), which is hot enough to melt lead. Meanwhile on the night side, temperatures drop to minus 290 F (minus 180 C).",
+    places: [
+      'Caloris Basin - Borealis - The Mariner',
+      'The Rembrandt Basin - The Discovery Scarp - The Pantheon Mons',
+    ],
     images: [
       'https://cdn.pixabay.com/photo/2013/07/18/10/57/mercury-163610_1280.jpg',
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcVlHIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bfcefdbb03ebe1d73fbe2e043abde222b35f1c08/PIA13508.jpg?disposition=attachment',
@@ -46,6 +55,7 @@ List<PlanetInfo> planets = [
     size: 3.032,
   ),
   PlanetInfo(
+    temp: 464,
     2,
     name: 'Venus',
     price: 800,
@@ -57,12 +67,18 @@ List<PlanetInfo> planets = [
       'https://cdn.pixabay.com/photo/2011/12/13/14/39/venus-11022_1280.jpg',
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcjhQIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ab0be61e3f61623e10ec25afdee91cc1a5db6830/PIA00148_1280.jpg?disposition=attachment',
     ],
+    places: [
+      'Ishtar Terra - Ishtar Terra - Lavinia Planitia',
+      'Lavinia Planitia - Maxwell Montes - Maat Mons',
+      'Tesserae - Coronae',
+    ],
     mass: '4.87 x 10^24',
     distanceFromEarth: '26',
     gravity: 8.87,
     size: 7.521,
   ),
   PlanetInfo(
+    temp: 15,
     3,
     name: 'Earth',
     price: 300,
@@ -79,12 +95,19 @@ List<PlanetInfo> planets = [
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Earth%2F6.jpg?alt=media&token=987c25b2-442b-42b7-8ecb-772936d165e2',
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Earth%2F7.jpg?alt=media&token=b82e6bf3-f935-4cc9-98f2-5e333c53137e',
     ],
+    places: [
+      'The Amazon Rainforest - The Great Barrier Reef',
+      'Serengeti National Park - Machu Picchu',
+      'The Grand Canyon - The Great Wall of China',
+      'Santorini Island - The Taj Mahal - The Northern Lights',
+    ],
     mass: '5.97 x 10^24',
     distanceFromEarth: '',
     gravity: 9.8,
     size: 7.918,
   ),
   PlanetInfo(
+    temp: -36,
     4,
     name: 'Mars',
     price: 1200,
@@ -92,6 +115,11 @@ List<PlanetInfo> planets = [
     iconImage: 'assets/images/mars.png',
     description:
         "The fourth planet from the sun is Mars, and it's a cold, desert-like place covered in dust. This dust is made of iron oxides, giving the planet its iconic red hue. Mars shares similarities with Earth: It is rocky, has mountains, valleys and canyons, and storm systems ranging from localized tornado-like dust devils to planet-engulfing dust storms. ",
+    places: [
+      'Olympus Mons - Tharsis volcanoes - Valles Marineris',
+      'The North and South Poles - Gale Crater and Mount Sharp',
+      'Medusae Fossae - Recurring Slope Lineae in Hale Crater',
+    ],
     images: [
       'https://d2pn8kiwq2w21t.cloudfront.net/images/imagesmars20160421PIA00407-16.width-1320.jpg',
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDRTIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--57fdc4ee44fe502a585880710f8113dd538c2a08/marspolarcrater_1600.jpg?disposition=attachment',
@@ -105,6 +133,7 @@ List<PlanetInfo> planets = [
     size: 4.212,
   ),
   PlanetInfo(
+    temp: -148,
     5,
     name: 'Jupiter',
     price: 1500,
@@ -112,6 +141,11 @@ List<PlanetInfo> planets = [
     iconImage: 'assets/images/jupiter.png',
     description:
         "The fifth planet from the sun, Jupiter is a giant gas world that is the most massive planet in our solar system — more than twice as massive as all the other planets combined, according to NASA. Its swirling clouds are colorful due to different types of trace gases. And a major feature in its swirling clouds is the Great Red Spot, a giant storm more than 10,000 miles wide. It has raged at more than 400 mph for the last 150 years, at least. Jupiter has a strong magnetic field, and with 75 moons, it looks a bit like a miniature solar system.",
+    places: [
+      'Great Red Spot - Europa - Ganymede',
+      'Io moon - Callisto',
+      "Jupiter's rings -  Jupiter's auroras - Jupiter's magnetosphere",
+    ],
     images: [
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ0FTIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d91c8056b0a4c3cd4cf6bcd3f7e6eda669270678/stsci-h-p1936a_1800.jpg?disposition=attachment',
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWdUIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--84ab61fca9faa459e90c2b331d40de0143de7d9e/Juno_Jupiter_Vortices-PIA25017-800x600.jpg?disposition=attachment',
@@ -124,12 +158,18 @@ List<PlanetInfo> planets = [
   ),
   PlanetInfo(
     6,
+    temp: -168,
     name: 'Saturn',
     price: 2000,
     duration: 15,
     iconImage: 'assets/images/saturn.png',
     description:
         "The sixth planet from the sun, Saturn is known most for its rings. When polymath Galileo Galilei first studied Saturn in the early 1600s, he thought it was an object with three parts: a planet and two large moons on either side. Not knowing he was seeing a planet with rings, the stumped astronomer entered a small drawing — a symbol with one large circle and two smaller ones — in his notebook, as a noun in a sentence describing his discovery. More than 40 years later, Christiaan Huygens proposed that they were rings. The rings are made of ice and rock and scientists are not yet sure how they formed. The gaseous planet is mostly hydrogen and helium and has numerous moons.",
+    places: [
+      "Saturn's rings - Saturn's moons - Enceladus",
+      'Rhea - Dione - Tethys',
+      "Saturn's storms",
+    ],
     images: [
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ2NTIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--381c53bc39247134629366ca6731e1ca801c7473/stsci-h-p1943a-f_1200.jpg?disposition=attachment',
       'https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdHdEIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3fec7f1e74056801816a435a1e7c45f3b3eacf4c/PIA01364.jpg?disposition=attachment',
@@ -144,6 +184,7 @@ List<PlanetInfo> planets = [
   PlanetInfo(
     7,
     name: 'Uranus',
+    temp: -216,
     price: 2400,
     duration: 18,
     iconImage: 'assets/images/uranus.png',
@@ -154,6 +195,10 @@ List<PlanetInfo> planets = [
         Astronomers believe an object twice the size of Earth collided with Uranus roughly 4 billion years ago, causing Uranus to tilt. 
         That tilt causes extreme seasons that last 20-plus years, 
         and the sun beats down on one pole or the other for 84 Earth-years at a time. ''',
+    places: [
+      "Saturn's storms - Miranda - Ariel",
+      'Umbriel - Titania - Oberon',
+    ],
     images: [
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Uranus%2F1.jpg?alt=media&token=564ab0bc-3814-4a7a-803d-3a0eebadc06b',
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Uranus%2F2.jpg?alt=media&token=6eb59a49-92b1-4dd1-aaa6-af1251239c8d',
@@ -168,6 +213,7 @@ List<PlanetInfo> planets = [
   PlanetInfo(
     8,
     name: 'Neptune',
+    temp: -214,
     price: 3000,
     duration: 22,
     iconImage: 'assets/images/neptune.png',
@@ -179,6 +225,10 @@ List<PlanetInfo> planets = [
          Irregularities in the orbit of Uranus led French astronomer Alexis Bouvard to suggest some other planet might be exerting a gravitational tug.
          German astronomer Johann Galle used calculations to help find Neptune in a telescope.
          Neptune is about 17 times as massive as Earth and has a rocky core.''',
+    places: [
+      "The Great Dark Spot - Triton - Neptune's Rings",
+      'Proteus - Nereid - Overall',
+    ],
     images: [
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Neptune%2F1.jpg?alt=media&token=0336ed32-329f-438c-a8d9-975eab399d64',
       'https://firebasestorage.googleapis.com/v0/b/nasa-space-apps-3caf1.appspot.com/o/Neptune%2F2.jpg?alt=media&token=18ae2332-52f8-445f-83ef-c2844124d268',
