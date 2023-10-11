@@ -1,7 +1,5 @@
 # nasa_space_apps
 
-لا اله الا الله
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
